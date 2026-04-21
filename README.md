@@ -1,16 +1,61 @@
-# React + Vite
+# LaunchNex
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**AI built for production. Not presentations.**
 
-Currently, two official plugins are available:
+LaunchNex is a modern, multi-page marketing website showcasing AI-powered product development services.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+- **React 19** — UI library
+- **Vite 8** — Build tool with HMR
+- **React Router DOM** — Client-side routing with animated page transitions
+- **Framer Motion** — Animations and page transitions
+- **React Hook Form + Zod** — Form handling and validation
+- **React Helmet Async** — SEO and document head management
+- **CSS Modules** — Scoped component styling
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Pages
 
-## Expanding the ESLint configuration
+| Route | Page |
+| --- | --- |
+| `/` | Home |
+| `/services` | Services |
+| `/process` | Process |
+| `/work` | Work |
+| `/about` | About |
+| `/blog` | Blog |
+| `/contact` | Contact |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── layout/      # Header, Footer
+│   ├── sections/    # Page section components
+│   └── ui/          # Reusable UI components
+├── pages/           # Route-level page components
+├── assets/          # Static assets
+├── styles/          # Global styles
+├── App.jsx          # Root component with routing
+└── main.jsx         # Entry point
+```
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Lint
+npm run lint
+```
