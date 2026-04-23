@@ -1,7 +1,8 @@
 .section {
   padding: var(--space-9) 0;
-  background: var(--color-bg);
+  background: var(--color-bg-2);
 }
+
 
 .inner {
   max-width: var(--max-width);

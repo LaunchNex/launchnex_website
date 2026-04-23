@@ -3,9 +3,9 @@
 }
 
 .hero {
-  padding: var(--space-9) var(--space-5);
+  padding: var(--space-7) var(--space-5);
   text-align: center;
-  background: var(--color-bg);
+  background: var(--color-bg-2);
   position: relative;
   overflow: hidden;
 }

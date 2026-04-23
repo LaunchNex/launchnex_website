@@ -48,8 +48,8 @@ export default function Hero() {
         </motion.p>
 
         <motion.div custom={4} variants={fadeUp} initial="hidden" animate="visible" className={styles.buttons}>
-          <Button to="/services" variant="primary">Explore Services</Button>
-          <Button to="/work" variant="secondary">See Recent Work</Button>
+          <Button to="/services" variant="primary">Explore services</Button>
+          <Button to="/work" variant="secondary">See recent work</Button>
         </motion.div>
 
         <motion.div custom={5} variants={fadeUp} initial="hidden" animate="visible" className={styles.stats}>

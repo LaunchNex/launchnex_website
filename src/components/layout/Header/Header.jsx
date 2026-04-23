@@ -61,8 +61,8 @@ export default function Header() {
           </nav>
 
           <div className={styles.cta}>
-            <Button to="/contact" variant="secondary">
-              Start with a Clarity Sprint →
+            <Button to="/contact" variant="primary">
+              Book a strategy call
             </Button>
           </div>
         </div>

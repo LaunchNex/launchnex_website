@@ -95,14 +95,14 @@
 }
 
 .card:hover .cardTitle {
-  color: #5EEAD4;
+  color: var(--color-highlight);
 }
 
 .cardHook {
   position: relative;
   z-index: 1;
   font-size: 14px;
-  color: #5EEAD4;
+  color: var(--color-highlight);
   font-weight: 500;
   font-style: italic;
 }

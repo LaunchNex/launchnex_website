@@ -186,8 +186,8 @@ export default function TrustCompliance() {
                 Your compliance needs are unique. We tailor every solution to meet your accessibility, privacy, and regulatory requirements.
               </p>
             </div>
-            <Button to="/contact" variant="secondary">
-              Discuss your requirements <ArrowRight size={14} style={{ marginLeft: 6 }} />
+            <Button to="/contact" variant="primary">
+              Discuss your requirements
             </Button>
           </div>
         </motion.div>
