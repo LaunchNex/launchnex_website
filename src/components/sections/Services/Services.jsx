@@ -1,8 +1,15 @@
 import { motion } from 'framer-motion';
+import { Cpu, AppWindow, PenTool, HeadsetIcon } from 'lucide-react';
 import SectionLabel from '../../ui/SectionLabel/SectionLabel';
-import Badge from '../../ui/Badge/Badge';
 import Button from '../../ui/Button/Button';
 import styles from './Services.module.css';
+
+const CARD_ICONS = [
+  { Icon: Cpu, color: '#34D399' },
+  { Icon: AppWindow, color: '#7BB8FF' },
+  { Icon: PenTool, color: '#C084FC' },
+  { Icon: HeadsetIcon, color: '#5EEAD4' },
+];
 
 const CATEGORIES = [
   {
@@ -56,7 +63,7 @@ export default function Services() {
           className={styles.header}
         >
           <SectionLabel>What we do</SectionLabel>
-          <h2 className={styles.title}>Full-spectrum AI engineering.</h2>
+          <h2 className={styles.title}>Full-spectrum <span className={styles.accent}>AI engineering.</span></h2>
           <p className={styles.subtitle}>From strategy to launch to long-term support — four capability areas, one expert team.</p>
         </motion.div>
 
@@ -70,14 +77,17 @@ export default function Services() {
               whileInView="visible"
               viewport={{ once: true }}
               className={styles.card}
+              style={{ '--icon-color': CARD_ICONS[i].color, '--card-border-color': CARD_ICONS[i].border, '--badge-color': CARD_ICONS[i].color }}
             >
-              <span className={styles.cardNumber}>0{i + 1}</span>
+              <span className={styles.cardIcon}>
+                {(() => { const { Icon, color } = CARD_ICONS[i]; return <Icon size={28} color={color} strokeWidth={1.5} />; })()}
+              </span>
               <h3 className={styles.cardTitle}>{category.title}</h3>
               <p className={styles.cardHook}>{category.hook}</p>
               <p className={styles.cardBody}>{category.description}</p>
               <div className={styles.badges}>
                 {category.badges.map((badge) => (
-                  <Badge key={badge}>{badge}</Badge>
+                  <span key={badge} className={styles.badge}>{badge}</span>
                 ))}
               </div>
             </motion.div>

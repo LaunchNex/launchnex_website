@@ -1,6 +1,7 @@
 .section {
   padding: var(--space-9) 0;
-  background: var(--color-bg);
+  background: var(--color-bg-2);
+  overflow: hidden;
 }
 
 .inner {
@@ -267,10 +268,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-5);
-  padding: var(--space-8) 0;
+  padding-top: var(--space-8);
   border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  margin-bottom: var(--space-9);
 }
 
 .valueCard {
@@ -299,34 +298,6 @@
   font-size: 13px;
   color: var(--color-text-secondary);
   line-height: 1.5;
-}
-
-/* ── CTA ── */
-.cta {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-4);
-}
-
-.ctaHeading {
-  color: var(--color-text-primary);
-}
-
-.ctaBody {
-  font-size: 15px;
-  color: var(--color-text-secondary);
-  line-height: 1.6;
-  max-width: 520px;
-}
-
-.ctaButtons {
-  display: flex;
-  gap: var(--space-4);
-  margin-top: var(--space-4);
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 /* ── Responsive ── */
@@ -379,11 +350,5 @@
   .nextBtn svg {
     width: 18px;
     height: 18px;
-  }
-
-  .ctaButtons {
-    flex-direction: column;
-    width: 100%;
-    max-width: 300px;
   }
 }

@@ -134,7 +134,7 @@
 
 .list li {
   font-size: 13px;
-  color: var(--color-text-tertiary);
+  color: var(--color-text-secondary);
   padding-left: var(--space-4);
   position: relative;
   line-height: 1.5;

@@ -4,10 +4,10 @@ import Button from '../../ui/Button/Button';
 import styles from './Hero.module.css';
 
 const STATS = [
-  { number: '12+', label: 'Years senior engineering experience' },
-  { number: '0', label: 'Projects handed to juniors' },
-  { number: '90', label: 'Days post-launch monitoring' },
-  { number: '100%', label: 'Senior delivery, every project' },
+  { number: '100', suffix: '%', label: 'Built from scratch. Always.', desc: 'Zero templates. Every solution is engineered specifically for your product and goals.' },
+  { number: '90', suffix: 'days', label: "We don't disappear at launch.", desc: '3 months of hands-on post-launch support. Bugs, tweaks, iterations — covered.' },
+  { number: '99', suffix: '%', label: 'Trusted by nearly every client.', desc: 'A near-perfect satisfaction record built on honest timelines and real outcomes.' },
+  { number: '3', suffix: 'x', label: 'Ship faster with AI workflows.', desc: 'Our AI-augmented process cuts delivery time by two thirds — without cutting corners.' },
 ];
 
 const fadeUp = {
@@ -48,15 +48,16 @@ export default function Hero() {
         </motion.p>
 
         <motion.div custom={4} variants={fadeUp} initial="hidden" animate="visible" className={styles.buttons}>
-          <Button to="/contact" variant="primary">Start with a Clarity Sprint →</Button>
-          <Button to="/process" variant="secondary">See how we work</Button>
+          <Button to="/services" variant="primary">Explore Services</Button>
+          <Button to="/work" variant="secondary">See Recent Work</Button>
         </motion.div>
 
         <motion.div custom={5} variants={fadeUp} initial="hidden" animate="visible" className={styles.stats}>
-          {STATS.map(({ number, label }) => (
+          {STATS.map(({ number, suffix, label, desc }) => (
             <div key={label} className={styles.stat}>
-              <span className={styles.statNumber}>{number}</span>
+              <span className={styles.statNumber}>{number}<span className={styles.statSuffix}>{suffix}</span></span>
               <span className={styles.statLabel}>{label}</span>
+              <span className={styles.statDesc}>{desc}</span>
             </div>
           ))}
         </motion.div>
