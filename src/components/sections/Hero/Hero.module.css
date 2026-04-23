@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: calc(var(--header-height) + var(--space-9)) var(--space-5) var(--space-9);
+  padding: calc(var(--header-height) + var(--space-7)) var(--space-5) var(--space-9);
   overflow: hidden;
 }
 
@@ -84,13 +84,10 @@
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
+  gap: var(--space-4);
   margin-top: var(--space-8);
-  width: 100%;
-  max-width: var(--max-width);
-  background: var(--color-border);
-  border-radius: 14px;
-  overflow: hidden;
+  width: min(var(--max-width), calc(100vw - var(--space-9)));
+  max-width: none;
 }
 
 .stat {
@@ -101,7 +98,9 @@
   gap: var(--space-3);
   padding: var(--space-6);
   background: var(--color-bg-2);
-  transition: background 0.25s ease;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  transition: background 0.25s ease, border-color 0.25s;
 }
 
 .stat:hover {
@@ -150,6 +149,6 @@
 
   .stats {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
+    gap: var(--space-3);
   }
 }

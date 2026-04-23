@@ -27,13 +27,15 @@
 /* Primary — filled accent */
 .primary {
   background: var(--color-accent-strong);
-  color: var(--color-text-primary);
+  color: #0a0f0a;
   border-color: var(--color-accent-strong);
+  font-weight: 600;
 }
 
 .primary:hover:not(:disabled) {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
+  background: var(--color-highlight);
+  border-color: var(--color-highlight);
+  color: #0a0f0a;
   box-shadow: 0 0 20px rgba(29, 191, 115, 0.3), 0 4px 16px rgba(29, 191, 115, 0.15);
 }
 
@@ -46,7 +48,7 @@
 
 .secondary:hover:not(:disabled) {
   background: var(--color-accent-strong);
-  color: var(--color-text-primary);
+  color: #0a0f0a;
   border-color: var(--color-accent-strong);
   box-shadow: 0 0 16px rgba(29, 191, 115, 0.3);
 }

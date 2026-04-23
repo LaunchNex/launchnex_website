@@ -5,10 +5,10 @@ import Button from '../../ui/Button/Button';
 import styles from './Services.module.css';
 
 const CARD_ICONS = [
-  { Icon: Cpu, color: '#34D399' },
-  { Icon: AppWindow, color: '#7BB8FF' },
-  { Icon: PenTool, color: '#C084FC' },
-  { Icon: HeadsetIcon, color: '#5EEAD4' },
+  { Icon: Cpu, color: '#2FE6A8' },
+  { Icon: AppWindow, color: '#2FE6A8' },
+  { Icon: PenTool, color: '#2FE6A8' },
+  { Icon: HeadsetIcon, color: '#2FE6A8' },
 ];
 
 const CATEGORIES = [
@@ -101,7 +101,7 @@ export default function Services() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className={styles.cta}
         >
-          <Button to="/services" variant="secondary">Explore all services →</Button>
+          <Button to="/services" variant="primary">Explore all services →</Button>
         </motion.div>
       </div>
     </section>

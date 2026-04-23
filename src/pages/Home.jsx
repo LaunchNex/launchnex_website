@@ -2,10 +2,8 @@ import { Helmet } from 'react-helmet-async';
 import Hero from '../components/sections/Hero/Hero';
 import Problem from '../components/sections/Problem/Problem';
 import Services from '../components/sections/Services/Services';
-import Process from '../components/sections/Process/Process';
 import TrustCompliance from '../components/sections/TrustCompliance/TrustCompliance';
 import WhyUs from '../components/sections/WhyUs/WhyUs';
-import About from '../components/sections/About/About';
 import CtaBanner from '../components/sections/CtaBanner/CtaBanner';
 
 export default function Home() {
@@ -29,11 +27,12 @@ export default function Home() {
       <Hero />
       <Problem />
       <Services />
-      <Process />
-      <TrustCompliance />
       <WhyUs />
-      <About />
+      <TrustCompliance />
       <CtaBanner />
     </>
   );
 }
+
+
+//{/* <Process /> */}

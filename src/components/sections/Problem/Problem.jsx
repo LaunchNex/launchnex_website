@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SectionLabel from '../../ui/SectionLabel/SectionLabel';
+import Button from '../../ui/Button/Button';
 import styles from './Problem.module.css';
 
 const COMPARISON = [
@@ -14,13 +15,6 @@ const COMPARISON = [
   { them: 'Vanish when things break', us: 'Proactive monitoring and drift detection', themDesc: 'When issues arise in production, the vendor is nowhere to be found.', usDesc: 'Automated monitoring catches problems before your users ever notice.' },
 ];
 
-const VALUES = [
-  { title: 'Accountability', desc: 'We own outcomes, not just deliverables.' },
-  { title: 'Transparency', desc: "You're involved at every step of the journey." },
-  { title: 'Reliability', desc: 'Production-grade systems built to scale.' },
-  { title: 'Partnership', desc: 'We grow with you, long after launch.' },
-];
-
 const XIcon = ({ size = 20 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#ef4444" strokeWidth="1.5" /><path d="M15 9l-6 6M9 9l6 6" stroke="#ef4444" strokeWidth="1.5" strokeLinecap="round" /></svg>
 );
@@ -29,12 +23,6 @@ const CheckIcon = ({ size = 20 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#1DBF73" strokeWidth="1.5" /><path d="M8 12.5l2.5 2.5 5.5-5.5" stroke="#1DBF73" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
 );
 
-const VALUE_ICONS = {
-  Accountability: () => <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="M9 12l2 2 4-4" /></svg>,
-  Transparency: () => <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>,
-  Reliability: () => <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" /><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" /></svg>,
-  Partnership: () => <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" /></svg>,
-};
 
 export default function Problem() {
   const [active, setActive] = useState(0);
@@ -116,19 +104,16 @@ export default function Problem() {
 
         </motion.div>
 
-        {/* ── Values ── */}
-        <motion.div className={styles.values} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-          {VALUES.map(({ title, desc }) => {
-            const Icon = VALUE_ICONS[title];
-            return (
-              <div key={title} className={styles.valueCard}>
-                <span className={styles.valueIcon}><Icon /></span>
-                <h4 className={styles.valueTitle}>{title}</h4>
-                <p className={styles.valueDesc}>{desc}</p>
-              </div>
-            );
-          })}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className={styles.cta}
+        >
+          <Button to="/process" variant="primary">See our process</Button>
         </motion.div>
+
       </div>
     </section>
   );
