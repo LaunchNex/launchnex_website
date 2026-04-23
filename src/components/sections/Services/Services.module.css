@@ -1,5 +1,6 @@
 .section {
   padding: var(--space-9) 0;
+  background: var(--color-bg);
 }
 
 .inner {
@@ -21,6 +22,10 @@
   color: var(--color-text-primary);
 }
 
+.accent {
+  color: var(--color-highlight);
+}
+
 .subtitle {
   font-size: 15px;
   color: var(--color-text-secondary);
@@ -35,6 +40,7 @@
 }
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
@@ -51,41 +57,86 @@
   transform: translateY(-2px);
 }
 
+.cardIcon {
+  position: absolute;
+  top: var(--space-6);
+  right: var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--icon-color) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--icon-color) 30%, transparent);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--icon-color) 15%, transparent);
+  flex-shrink: 0;
+  transition: box-shadow 0.3s;
+}
+
+.card:hover .cardIcon {
+  box-shadow: 0 0 30px color-mix(in srgb, var(--icon-color) 25%, transparent);
+}
+
 .cardNumber {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 2.2rem;
+  font-weight: 700;
   color: var(--color-highlight);
   opacity: 0.5;
   line-height: 1;
 }
 
 .cardTitle {
+  position: relative;
+  z-index: 1;
   color: var(--color-text-primary);
   transition: color 0.2s;
 }
 
 .card:hover .cardTitle {
-  color: var(--color-highlight);
+  color: #5EEAD4;
 }
 
 .cardHook {
+  position: relative;
+  z-index: 1;
   font-size: 14px;
-  color: var(--color-highlight);
+  color: #5EEAD4;
   font-weight: 500;
   font-style: italic;
 }
 
 .cardBody {
+  position: relative;
+  z-index: 1;
   font-size: 14px;
   color: var(--color-text-secondary);
   line-height: 1.7;
 }
 
 .badges {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
-  margin-top: var(--space-2);
+  margin-top: auto;
+  padding-top: var(--space-3);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .cta {

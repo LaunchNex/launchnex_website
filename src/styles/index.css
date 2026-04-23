@@ -12,6 +12,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -208,7 +209,7 @@ h3 {
 
 /* Placeholder styling */
 ::placeholder {
-  color: var(--color-text-tertiary);
+  color: var(--color-text-secondary);
   opacity: 0.6;
 }
 

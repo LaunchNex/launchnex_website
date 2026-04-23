@@ -1,5 +1,6 @@
 .label {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-family: var(--font-body);
   font-size: 10px;
   font-weight: 600;

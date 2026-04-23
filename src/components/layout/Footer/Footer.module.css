@@ -37,7 +37,7 @@
 
 .subTagline {
   font-size: 13px;
-  color: var(--color-text-tertiary);
+  color: var(--color-text-secondary);
 }
 
 .column {
@@ -52,7 +52,7 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-text-tertiary);
+  color: var(--color-text-secondary);
   margin-bottom: var(--space-2);
 }
 
@@ -73,7 +73,7 @@
   border-top: 1px solid transparent;
   border-image: linear-gradient(90deg, transparent, rgba(29, 191, 115, 0.15), rgba(47, 230, 168, 0.1), transparent) 1;
   font-size: 13px;
-  color: var(--color-text-tertiary);
+  color: var(--color-text-secondary);
 }
 
 @media (max-width: 960px) {
