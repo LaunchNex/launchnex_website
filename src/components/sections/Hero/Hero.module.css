@@ -137,6 +137,14 @@
   line-height: 1.6;
 }
 
+.accent {
+	background: linear-gradient(135deg, #2fe6a8 0%, #38bdf8 60%, #3b82f6 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+  font-style: italic;
+}
+
 @media (max-width: 640px) {
   .hero {
     padding-top: calc(var(--header-height) + var(--space-8));
