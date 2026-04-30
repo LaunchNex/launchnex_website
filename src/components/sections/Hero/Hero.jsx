@@ -34,7 +34,7 @@ export default function Hero() {
         <motion.h1 custom={1} variants={fadeUp} initial="hidden" animate="visible" className={styles.title}>
           AI built for production.
           <br />
-          <em className={styles.italic}>Not presentations.</em>
+          <em className={styles.accent}>Not presentations.</em>
         </motion.h1>
 
         <motion.p custom={2} variants={fadeUp} initial="hidden" animate="visible" className={styles.subtitle}>

@@ -1,26 +1,26 @@
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
+	display: flex;
+	align-items: center;
+	gap: 2px;
+	text-decoration: none;
 }
 
 .icon {
-  flex-shrink: 0;
-  filter: drop-shadow(0 0 6px rgba(29, 191, 115, 0.3));
+	flex-shrink: 0;
+	filter: drop-shadow(0 0 6px rgba(29, 191, 115, 0.3));
 }
 
 .text {
-  font-family: var(--font-display);
-  font-weight: 400;
-  color: var(--color-text-primary);
-  letter-spacing: -0.01em;
-  line-height: 1;
+	font-family: var(--font-display);
+	font-weight: 400;
+	color: var(--color-text-primary);
+	letter-spacing: -0.01em;
+	line-height: 1;
 }
 
 .accent {
-  background: linear-gradient(135deg, #1DBF73, #2FE6A8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+	background: linear-gradient(135deg, #2fe6a8 0%, #38bdf8 60%, #3b82f6 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
 }
