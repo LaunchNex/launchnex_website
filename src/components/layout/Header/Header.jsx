@@ -1,5 +1,7 @@
-import { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+"use client";
+import { useState, useEffect, use } from "react";
+import Link from "next/link";
+import NavLink from "@/components/ui/NavLink";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "../../ui/Button/Button";
 import Logo from "../../ui/Logo/Logo";
@@ -44,14 +46,14 @@ export default function Header() {
 	return (
 		<header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
 			<div className={styles.inner}>
-				<Link to="/" className={styles.logo} onClick={() => setMenuOpen(false)} aria-label="LaunchNex — Go to homepage">
+				<Link href="/" className={styles.logo} onClick={() => setMenuOpen(false)} aria-label="LaunchNex — Go to homepage">
 					<Logo size={40} />
 				</Link>
 
 				<div className={styles.right}>
 					<nav className={styles.nav} aria-label="Main navigation">
 						{NAV_LINKS.map(({ to, label }) => (
-							<NavLink key={to} to={to} end={to === "/"} className={({ isActive }) => `${styles.navLink} ${isActive ? styles.active : ""}`}>
+							<NavLink key={to} href={to} end={to === "/"} className={styles.navLink} activeClassName={styles.active}>
 								{label}
 							</NavLink>
 						))}
@@ -86,7 +88,7 @@ export default function Header() {
 						aria-modal="true">
 						<nav className={styles.drawerNav} aria-label="Mobile navigation">
 							{NAV_LINKS.map(({ to, label }) => (
-								<NavLink key={to} to={to} className={({ isActive }) => `${styles.drawerLink} ${isActive ? styles.active : ""}`} onClick={() => setMenuOpen(false)}>
+								<NavLink key={to} href={to} className={({ isActive }) => `${styles.drawerLink} ${isActive ? styles.active : ""}`} onClick={() => setMenuOpen(false)}>
 									{label}
 								</NavLink>
 							))}

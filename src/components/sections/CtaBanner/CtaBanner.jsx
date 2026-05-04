@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import MotionDiv from '../../ui/MotionDiv/MotionDiv';
 import Button from '../../ui/Button/Button';
 import styles from './CtaBanner.module.css';
 
@@ -6,7 +6,7 @@ export default function CtaBanner() {
   return (
     <section className={styles.section}>
       <div className={styles.glow} aria-hidden="true" />
-      <motion.div className={styles.cta} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+      <MotionDiv className={styles.cta}>
         <h2 className={styles.ctaHeading}>
           Work with a real <span className={styles.accent}>AI partner</span>, not just a vendor.
         </h2>
@@ -17,7 +17,7 @@ export default function CtaBanner() {
             Talk to an AI expert
           </Button>
         </div>
-      </motion.div>
+      </MotionDiv>
     </section>
   );
 }
