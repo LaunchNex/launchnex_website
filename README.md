@@ -109,7 +109,7 @@ src/
 │   └── ui/           # Shared UI (Button, Logo, SectionLabel, etc.)
 ```
 
-Deployed on **Vercel** at [launchnex.dev](https://launchnex.dev).
+
 
 ---
 
