@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import MotionDiv from '../../ui/MotionDiv/MotionDiv';
 import SectionLabel from '../../ui/SectionLabel/SectionLabel';
 import styles from './About.module.css';
 
@@ -47,33 +47,19 @@ export default function About() {
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className={styles.header}
-        >
+        <MotionDiv className={styles.header}>
           <SectionLabel>Who we are</SectionLabel>
           <h2 className={styles.title}>
             Not an agency. <em>An AI engineering partner.</em>
           </h2>
-        </motion.div>
+        </MotionDiv>
 
         <div className={styles.cards}>
           {IDENTITY_CARDS.map((card, i) => (
-            <motion.div
-              key={card.title}
-              custom={i}
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className={styles.card}
-            >
+            <MotionDiv key={card.title} custom={i} variants={cardVariants} className={styles.card}>
               <h3 className={styles.cardTitle}>{card.title}</h3>
               <p className={styles.cardBody}>{card.description}</p>
-            </motion.div>
+            </MotionDiv>
           ))}
         </div>
       </div>

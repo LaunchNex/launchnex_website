@@ -1,61 +1,116 @@
 # LaunchNex
 
-**AI built for production. Not presentations.**
+> **AI built for production. Not presentations.**
 
-LaunchNex is a modern, multi-page marketing website showcasing AI-powered product development services.
+LaunchNex is a boutique AI engineering studio led by senior engineers with 12+ years of production experience. We don't just build AI — we take ownership of outcomes.
 
-## Tech Stack
+🌐 [launchnex.dev](https://launchnex.dev) · 📧 hello@launchnex.dev
 
-- **React 19** — UI library
-- **Vite 8** — Build tool with HMR
-- **React Router DOM** — Client-side routing with animated page transitions
-- **Framer Motion** — Animations and page transitions
-- **React Hook Form + Zod** — Form handling and validation
-- **React Helmet Async** — SEO and document head management
-- **CSS Modules** — Scoped component styling
+---
 
-## Pages
+## What We Do
 
-| Route | Page |
-| --- | --- |
-| `/` | Home |
-| `/services` | Services |
-| `/process` | Process |
-| `/work` | Work |
-| `/about` | About |
-| `/blog` | Blog |
-| `/contact` | Contact |
+We are not an agency. We are an **AI engineering partner** — built for clients who need real results, not demos.
 
-## Project Structure
+### Services
+
+| Capability | What we deliver |
+|---|---|
+| **AI & Generative AI** | Custom LLMs, AI agents, RAG pipelines, chatbots, workflow automation |
+| **Application & Product Development** | React, Next.js, React Native — full-stack, AI-first |
+| **Design & Experience** | UI/UX design, user research, prototyping, design systems |
+| **Consulting & Support** | AI feasibility assessment, QA, maintenance, post-launch support |
+
+---
+
+## Why LaunchNex
+
+The market is full of AI vendors. It has almost no AI partners.
+
+| Typical AI Vendors | LaunchNex |
+|---|---|
+| Demo-driven sales pitches | Honest feasibility assessment first |
+| Junior developers on your project | Senior engineers on every engagement |
+| Disappear after handoff | 90-day post-launch monitoring |
+| Black-box development | Weekly demos and shared dashboards |
+| Scope creep and change orders | Fixed-scope sprints with defined outputs |
+| Prototype passed off as product | Production-grade from sprint one |
+| No quality guarantees | SLAs on accuracy, latency, hallucination rate |
+| Vanish when things break | Proactive monitoring and drift detection |
+
+---
+
+## How We Operate
+
+- **Outcome Ownership** — Accountable for outcomes, not just deliverables.
+- **Senior-Only Delivery** — No junior handoffs. Every project delivered by experienced AI engineers.
+- **Business Impact First** — We focus on impact, not features.
+- **Secure & Compliant** — Security, privacy, and compliance built in from day one.
+- **Fast. Transparent. Reliable.** — Clear communication and a proven process.
+
+---
+
+## Trust & Compliance
+
+We embed security, accessibility, and privacy into every solution.
+
+- ✓ WCAG 2.1 AA informed development
+- ✓ GDPR-ready data handling
+- ✓ Secure architecture & code practices
+- ✓ Audit-ready documentation
+- ✓ Role-based access & data protection
+
+---
+
+## The Numbers
+
+| | |
+|---|---|
+| **100%** | Built from scratch. Zero templates. |
+| **90 days** | Post-launch support included on every engagement. |
+| **99%** | Client satisfaction record. |
+| **3×** | Faster delivery with AI-augmented workflows. |
+
+---
+
+## This Repository
+
+This is the source code for the LaunchNex marketing website.
+
+**Tech Stack:** Next.js 16 · React 19 · Framer Motion · CSS Modules · Lucide React · React Hook Form · Zod
+
+### Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+### Scripts
+
+| Script | Description |
+|--------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run start` | Start production server |
+| `npm run lint` | Run ESLint |
+
+### Project Structure
 
 ```
 src/
+├── app/              # Next.js App Router pages & layouts
 ├── components/
-│   ├── layout/      # Header, Footer
-│   ├── sections/    # Page section components
-│   └── ui/          # Reusable UI components
-├── pages/           # Route-level page components
-├── assets/          # Static assets
-├── styles/          # Global styles
-├── App.jsx          # Root component with routing
-└── main.jsx         # Entry point
+│   ├── layout/       # Header, Footer
+│   ├── pages/        # Page-level components
+│   ├── sections/     # Homepage sections (Hero, Problem, Services, WhyUs, TrustCompliance, CtaBanner)
+│   └── ui/           # Shared UI (Button, Logo, SectionLabel, etc.)
 ```
 
-## Getting Started
 
-```bash
-# Install dependencies
-npm install
 
-# Start development server
-npm run dev
+---
 
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-
-# Lint
-npm run lint
-```
+© 2026 LaunchNex. All rights reserved.

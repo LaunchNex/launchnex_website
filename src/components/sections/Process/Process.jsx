@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import MotionDiv from '../../ui/MotionDiv/MotionDiv';
 import SectionLabel from '../../ui/SectionLabel/SectionLabel';
 import Badge from '../../ui/Badge/Badge';
 import styles from './Process.module.css';
@@ -68,13 +68,7 @@ export default function Process() {
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className={styles.header}
-        >
+        <MotionDiv className={styles.header}>
           <SectionLabel>How we work</SectionLabel>
           <h2 className={styles.title}>The process nobody else offers.</h2>
           <div className={styles.highlight}>
@@ -83,18 +77,11 @@ export default function Process() {
               failure point — from discovery to deployment to monitoring.
             </p>
           </div>
-        </motion.div>
+        </MotionDiv>
 
         <div className={styles.timeline}>
           {STEPS.map((step) => (
-            <motion.div
-              key={step.step}
-              variants={stepVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className={styles.step}
-            >
+            <MotionDiv key={step.step} variants={stepVariants} className={styles.step}>
               <div className={styles.stepIndicator}>
                 <span className={styles.stepDot} />
                 {step.step < STEPS.length && <span className={styles.stepLine} />}
@@ -114,7 +101,7 @@ export default function Process() {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </MotionDiv>
           ))}
         </div>
       </div>
