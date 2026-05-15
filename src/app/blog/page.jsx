@@ -1,4 +1,5 @@
 import BlogPage from "@/components/pages/Blog/BlogPage";
+import { getAllPosts } from "@/lib/blog";
 
 export const metadata = {
 	title: "Blog — LaunchNex",
@@ -7,6 +8,12 @@ export const metadata = {
 		title: "Blog — LaunchNex",
 		description: "Insights on AI engineering and production AI.",
 		url: "https://launchnex.dev/blog",
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Blog — LaunchNex",
+		description: "Insights on AI engineering and production AI.",
 	},
 	alternates: {
 		canonical: "https://launchnex.dev/blog",
@@ -14,9 +21,6 @@ export const metadata = {
 };
 
 export default function Page() {
-	return (
-		<>
-			<BlogPage />
-		</>
-	);
+	const posts = getAllPosts();
+	return <BlogPage posts={posts} />;
 }
