@@ -1,0 +1,53 @@
+.callout {
+	display: flex;
+	gap: 12px;
+	padding: 14px 18px;
+	border-radius: 8px;
+	margin: 1.75rem 0;
+	border: 1px solid;
+	font-size: 15px;
+	line-height: 1.6;
+}
+
+.icon {
+	flex-shrink: 0;
+	font-size: 17px;
+	margin-top: 2px;
+}
+
+.body {
+	flex: 1;
+	color: inherit;
+}
+
+.body > *:first-child {
+	margin-top: 0;
+}
+
+.body > *:last-child {
+	margin-bottom: 0;
+}
+
+.info {
+	background: rgba(59, 130, 246, 0.07);
+	border-color: rgba(59, 130, 246, 0.25);
+	color: #93c5fd;
+}
+
+.tip {
+	background: rgba(29, 191, 115, 0.07);
+	border-color: rgba(29, 191, 115, 0.25);
+	color: #2fe6a8;
+}
+
+.warning {
+	background: rgba(245, 158, 11, 0.07);
+	border-color: rgba(245, 158, 11, 0.25);
+	color: #fcd34d;
+}
+
+.danger {
+	background: rgba(239, 68, 68, 0.07);
+	border-color: rgba(239, 68, 68, 0.25);
+	color: #fca5a5;
+}

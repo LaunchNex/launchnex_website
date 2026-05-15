@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import styles from "./BlogPost.module.css";
+import mdxComponents from "@/components/mdx";
+import remarkGfm from "remark-gfm";
 
 const BASE_URL = "https://launchnex.dev";
 
@@ -51,34 +53,51 @@ function formatDate(dateStr) {
 	});
 }
 
+function renderTitle(title, accentClass) {
+	return title.split(/(\d+%)/).map((part, i) =>
+		/\d+%/.test(part)
+			? <em key={i} className={accentClass}>{part}</em>
+			: part
+	);
+}
+
 export default async function BlogPostPage({ params }) {
 	const { slug } = await params;
 	const post = getPostBySlug(slug);
 	if (!post) notFound();
 
+	const parenIdx = post.title.indexOf(" (");
+	const mainTitle = parenIdx > -1 ? post.title.slice(0, parenIdx) : post.title;
+	const subtitle = parenIdx > -1 ? post.title.slice(parenIdx + 2, -1) : null;
+
 	return (
 		<div className={styles.page}>
 			<header className={styles.header}>
+				{post.ogImage && (
+					<div
+						className={styles.headerBg}
+						style={{ backgroundImage: `url(${post.ogImage})` }}
+					/>
+				)}
+				<div className={styles.headerOverlay} />
 				<div className={styles.headerInner}>
 					<div className={styles.meta}>
-						{post.tags.map((tag) => (
-							<span key={tag} className={styles.tag}>{tag}</span>
-						))}
+						<time className={styles.date} dateTime={post.date}>{formatDate(post.date)}</time>
+						<span className={styles.separator}>·</span>
 						<span className={styles.readingTime}>{post.readingTime} min read</span>
 					</div>
-					<h1 className={styles.title}>{post.title}</h1>
-					<p className={styles.description}>{post.description}</p>
-					<div className={styles.byline}>
-						<span className={styles.author}>{post.author}</span>
-						<span className={styles.separator}>·</span>
-						<time className={styles.date} dateTime={post.date}>{formatDate(post.date)}</time>
-					</div>
+					<h1 className={styles.title}>{renderTitle(mainTitle, styles.titleAccent)}</h1>
+					{subtitle && <p className={styles.subtitle}>{subtitle}</p>}
 				</div>
 			</header>
 
 			<article className={styles.article}>
 				<div className={styles.prose}>
-					<MDXRemote source={post.content} />
+					<MDXRemote
+					source={post.content}
+					components={mdxComponents}
+					options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+				/>
 				</div>
 			</article>
 		</div>
