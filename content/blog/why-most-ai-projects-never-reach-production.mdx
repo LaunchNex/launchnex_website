@@ -1,0 +1,90 @@
+---
+title: "Why 70% of AI Projects Never Reach Production (And How to Be in the 30%)"
+description: "Most AI projects die somewhere between a promising demo and a working product. Here's what actually kills them — and the process changes that give your project a fighting chance."
+date: "2025-01-15"
+author: "LaunchNex Engineering"
+tags: ["AI Strategy", "Production AI", "Engineering"]
+ogImage: "https://images.unsplash.com/photo-1773332585754-f1436987743b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+---
+
+Every year, enterprises pour billions into AI initiatives. Most of those initiatives never see the light of production. They die in POC purgatory, get shelved after a demo that wowed the boardroom, or quietly fail six months after launch when nobody's measuring the right things.
+
+<StatGrid>
+  <Stat value="70%" label="of AI projects fail" sublabel="before creating business value — Gartner estimate, held steady for years" />
+</StatGrid>
+
+At LaunchNex, we were built specifically to fix this. But first, let's understand *why* it happens.
+
+## The Four Root Causes
+
+### 1. Building Before Assessing
+
+The most common failure pattern starts before a single line of code is written. A stakeholder sees a competitor using AI and mandates a project. A vendor demos a flashy prototype. Everyone gets excited and signs the contract.
+
+<Callout type="warning">Nobody asks the hard question: **Is AI actually the right tool for this problem?**</Callout>
+
+AI is powerful, but it's not magic. It requires the right data, the right problem structure, and the right business context. Skipping feasibility assessment is like building a house without checking if the land can support it.
+
+<Callout type="tip">We spend the first two weeks of every engagement on exactly this — what we call the **Clarity Sprint**. If AI won't help, we say so before you've spent anything on development.</Callout>
+
+### 2. Junior Engineers on Critical Work
+
+Cost-cutting in AI projects is a false economy. AI engineering requires deep expertise in:
+
+- ML system design and model selection
+- Data pipeline architecture
+- Evaluation frameworks and hallucination mitigation
+- Production monitoring and drift detection
+
+<Callout type="warning">When these decisions are made by engineers without production AI experience, what looks like a working system in staging turns into a fragile, unmaintainable liability in production.</Callout>
+
+Every engagement at LaunchNex is led by senior engineers. Not mentored by them — *led* by them.
+
+### 3. No Definition of "Done"
+
+Most AI projects lack contractual SLAs on the metrics that actually matter:
+
+| Metric | What it measures |
+|--------|-----------------|
+| Accuracy / F1 score | Model correctness threshold |
+| Latency budget | Maximum acceptable response time |
+| Hallucination rate | Acceptable error bounds |
+| Fallback behavior | What happens under uncertainty |
+
+Without these, "done" means whatever the vendor says it means. You take delivery of something that looks finished but has no performance guarantees — and you find out it doesn't work at the worst possible time.
+
+### 4. The Post-Launch Cliff
+
+Even projects that reach production often fail quietly afterward. AI systems degrade over time as data distributions shift. The model that worked perfectly in January starts giving wrong answers by June, and nobody notices until a customer complains.
+
+<Callout type="danger">This is **model drift** — and it requires proactive monitoring to catch. Most vendors deliver the system and disappear.</Callout>
+
+We stay for 90 days post-launch with automated monitoring and drift detection built into every engagement.
+
+---
+
+## The Pattern of Projects That Succeed
+
+Looking at the 30% that make it, some consistent patterns emerge:
+
+<CardGrid cols={2}>
+  <Card icon="🎯" title="Start with constraints, not ambitions" description="The successful projects define what AI won't do before defining what it will. They have a clear fallback when the model is uncertain." />
+  <Card icon="📊" title="Measure the right things" description="Business KPIs — not just model accuracy. Reduced support tickets, faster triage time, higher conversion. Engineering metrics serve business metrics." />
+  <Card icon="🏗️" title="Treat data as infrastructure" description="Data quality, lineage, and governance are first-class engineering concerns from day one — not something to figure out later." />
+  <Card icon="🚀" title="Ship incrementally" description="Not a big-bang deployment but a phased rollout with feedback loops at each stage." />
+</CardGrid>
+
+---
+
+## What This Means for Your Next AI Project
+
+Before you start, answer these questions honestly:
+
+1. Do we have the data to train or fine-tune a model — or are we assuming it exists?
+2. What does "good enough" performance look like, in specific, measurable terms?
+3. Who owns this system in production? Who is responsible when it breaks?
+4. What happens to users when the AI is wrong or unavailable?
+
+If you can't answer these, you're not ready to build. You're ready to assess. That's not a failure — it's the most valuable thing you can do before committing budget and engineering time.
+
+If you want an honest answer to whether AI will help your business — not a sales pitch, not a demo — [start with a Clarity Sprint](/contact). Two weeks. Fixed fee. A real answer.
