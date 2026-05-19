@@ -51,14 +51,14 @@
 .stepTitle {
 	font-size: 15px;
 	font-weight: 600;
-	color: var(--color-text-primary);
+	color: var(--text-primary);
 	margin: 4px 0 8px;
 	line-height: 1.3;
 }
 
 .stepBody {
 	font-size: 14px;
-	color: var(--color-text-secondary);
+	color: var(--text-primary-soft);
 	line-height: 1.7;
 }
 

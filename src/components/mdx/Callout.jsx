@@ -1,7 +1,7 @@
 import styles from "./Callout.module.css";
 
 const ICONS = {
-	info: "ℹ️",
+	info: "❝",
 	tip: "💡",
 	warning: "⚠️",
 	danger: "🚨",

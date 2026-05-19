@@ -1,9 +1,13 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import styles from "./BlogPost.module.css";
 import mdxComponents from "@/components/mdx";
 import remarkGfm from "remark-gfm";
+import TableOfContents from "@/components/blog/TableOfContents";
+import ShareButtons from "@/components/blog/ShareButtons";
+import EmailSignup from "@/components/blog/EmailSignup";
 
 const BASE_URL = "https://launchnex.dev";
 
@@ -61,45 +65,133 @@ function renderTitle(title, accentClass) {
 	);
 }
 
+function slugify(text) {
+	return String(text)
+		.toLowerCase()
+		.replace(/[^a-z0-9]+/g, "-")
+		.replace(/(^-|-$)/g, "");
+}
+
+function extractHeadings(content) {
+	const headingRegex = /^(#{2,3})\s+(.+)$/gm;
+	const headings = [];
+	let match;
+	while ((match = headingRegex.exec(content)) !== null) {
+		const level = match[1].length;
+		const text = match[2].trim().replace(/\*\*/g, "").replace(/\*/g, "");
+		headings.push({ level, text, id: slugify(text) });
+	}
+	return headings;
+}
+
 export default async function BlogPostPage({ params }) {
 	const { slug } = await params;
 	const post = getPostBySlug(slug);
 	if (!post) notFound();
 
+	const allPosts = getAllPosts();
+	const relatedPosts = allPosts.filter((p) => p.slug !== slug).slice(0, 3);
+	const headings = extractHeadings(post.content);
+	const firstTag = post.tags?.[0] || null;
+	const postUrl = `${BASE_URL}/blog/${slug}`;
+
 	const parenIdx = post.title.indexOf(" (");
 	const mainTitle = parenIdx > -1 ? post.title.slice(0, parenIdx) : post.title;
-	const subtitle = parenIdx > -1 ? post.title.slice(parenIdx + 2, -1) : null;
 
 	return (
 		<div className={styles.page}>
 			<header className={styles.header}>
-				{post.ogImage && (
-					<div
-						className={styles.headerBg}
-						style={{ backgroundImage: `url(${post.ogImage})` }}
-					/>
-				)}
-				<div className={styles.headerOverlay} />
 				<div className={styles.headerInner}>
+					<Link href="/blog" className={styles.backLink}>
+						<span className={styles.backArrow}>←</span> Back to Blog
+					</Link>
 					<div className={styles.meta}>
+						{firstTag && (
+							<span className={styles.tag}>{firstTag.toUpperCase()}</span>
+						)}
+						<span className={styles.metaDot}>·</span>
 						<time className={styles.date} dateTime={post.date}>{formatDate(post.date)}</time>
-						<span className={styles.separator}>·</span>
-						<span className={styles.readingTime}>{post.readingTime} min read</span>
+						<span className={styles.metaDot}>·</span>
+						<span className={styles.readingTime}>{post.readingTime} MIN READ</span>
 					</div>
 					<h1 className={styles.title}>{renderTitle(mainTitle, styles.titleAccent)}</h1>
-					{subtitle && <p className={styles.subtitle}>{subtitle}</p>}
+					{post.description && (
+						<p className={styles.description}>{post.description}</p>
+					)}
+					{post.author && (
+						<div className={styles.author}>
+							<div className={styles.authorAvatar}>
+								{post.author.charAt(0)}
+							</div>
+							<div className={styles.authorInfo}>
+								<span className={styles.authorLabel}>Written by {post.author}</span>
+								{post.authorRole && <span className={styles.authorRole}>{post.authorRole}</span>}
+							</div>
+						</div>
+					)}
+					{post.ogImage && (
+						<div className={styles.heroImageWrap}>
+							<img
+								src={post.ogImage}
+								alt={post.title}
+								className={styles.heroImage}
+							/>
+						</div>
+					)}
 				</div>
 			</header>
 
-			<article className={styles.article}>
-				<div className={styles.prose}>
-					<MDXRemote
-					source={post.content}
-					components={mdxComponents}
-					options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
-				/>
-				</div>
-			</article>
+			<div className={styles.body}>
+				<article className={styles.article}>
+					<div className={styles.prose}>
+						<MDXRemote
+							source={post.content}
+							components={mdxComponents}
+							options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+						/>
+					</div>
+				</article>
+
+				<aside className={styles.sidebar}>
+					<div className={styles.sidebarSticky}>
+						{headings.length > 0 && (
+							<div className={styles.sidebarBlock}>
+								<TableOfContents headings={headings} />
+							</div>
+						)}
+
+						<div className={styles.sidebarBlock}>
+							<EmailSignup />
+						</div>
+
+						{relatedPosts.length > 0 && (
+							<div className={styles.sidebarBlock}>
+								<p className={styles.sidebarLabel}>RELATED ARTICLES</p>
+								<div className={styles.relatedList}>
+									{relatedPosts.map((rp) => (
+										<Link key={rp.slug} href={`/blog/${rp.slug}`} className={styles.relatedCard}>
+											{rp.ogImage && (
+												<div
+													className={styles.relatedThumb}
+													style={{ backgroundImage: `url(${rp.ogImage})` }}
+												/>
+											)}
+											<div className={styles.relatedInfo}>
+												<p className={styles.relatedTitle}>{rp.title}</p>
+												<time className={styles.relatedDate}>{formatDate(rp.date)}</time>
+											</div>
+										</Link>
+									))}
+								</div>
+							</div>
+						)}
+
+						<div className={styles.sidebarBlock}>
+							<ShareButtons title={post.title} url={postUrl} />
+						</div>
+					</div>
+				</aside>
+			</div>
 		</div>
 	);
 }

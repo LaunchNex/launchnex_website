@@ -75,6 +75,23 @@ button {
 	--color-text-secondary: #a0aec0;
 	--color-text-tertiary: #6b7280;
 
+	/* Blog-specific surfaces */
+	--blog-bg-callout-info:    rgba(29, 191, 115, 0.07);
+	--blog-bg-callout-tip:     rgba(29, 191, 115, 0.07);
+	--blog-bg-callout-warning: rgba(245, 158, 11, 0.07);
+	--blog-bg-callout-danger:  rgba(239, 68, 68, 0.07);
+	--blog-border-callout-info: rgba(29, 191, 115, 0.18);
+
+	/* Extended text scale */
+	--text-primary:        #F0F3F8;
+	--text-primary-soft:   #CBD1DC;
+	--text-subtle:         #AEB6C4;
+	--text-secondary:      #8B94A5;
+	--text-tertiary:       #767F8F;
+	--text-muted-soft:     #687180;
+	--text-muted:          #5C6574;
+	--text-light:          #3D4552;
+
 	/* Accent — Bottle Green primary */
 	--color-accent: #1dbf73;
 	--color-accent-strong: #1dbf73;

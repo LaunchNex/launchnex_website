@@ -33,7 +33,7 @@
 
 .label {
 	font-size: 12px;
-	color: var(--color-text-tertiary);
+	color: var(--text-subtle);
 	text-transform: uppercase;
 	letter-spacing: 0.06em;
 	font-weight: 500;
@@ -41,7 +41,7 @@
 
 .sublabel {
 	font-size: 12px;
-	color: var(--color-text-secondary);
+	color: var(--text-primary-soft);
 	line-height: 1.4;
 	margin-top: 2px;
 }

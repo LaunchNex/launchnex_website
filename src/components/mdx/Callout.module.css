@@ -1,12 +1,13 @@
 .callout {
 	display: flex;
-	gap: 12px;
-	padding: 14px 18px;
-	border-radius: 8px;
+	gap: 16px;
+	padding: 20px 24px;
+	border-radius: 10px;
 	margin: 1.75rem 0;
 	border: 1px solid;
 	font-size: 15px;
-	line-height: 1.6;
+	line-height: 1.65;
+	align-items: center;
 }
 
 .icon {
@@ -29,9 +30,17 @@
 }
 
 .info {
-	background: rgba(59, 130, 246, 0.07);
-	border-color: rgba(59, 130, 246, 0.25);
-	color: #93c5fd;
+	background: var(--blog-bg-callout-info);
+	border-color: var(--blog-border-callout-info);
+	color: var(--text-primary-soft);
+}
+
+.info .icon {
+	font-size: 36px;
+	line-height: 1;
+	color: var(--color-highlight);
+	margin-top: 0;
+	font-family: Georgia, serif;
 }
 
 .tip {
