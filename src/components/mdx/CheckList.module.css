@@ -1,0 +1,26 @@
+.checkList :global(ul) {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.checkList :global(ul li) {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	margin-bottom: 0;
+	color: var(--text-primary-soft);
+	font-size: 15px;
+	line-height: 1.65;
+}
+
+.checkList :global(ul li)::before {
+	content: "◎";
+	color: var(--color-highlight);
+	font-size: 17px;
+	flex-shrink: 0;
+	line-height: 1.55;
+}

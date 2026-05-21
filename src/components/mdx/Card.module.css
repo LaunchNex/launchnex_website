@@ -3,21 +3,22 @@
 	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 	gap: 16px;
 	margin: 1.75rem 0;
+	align-items: start;
 }
 
-.grid.cols2 {
-	grid-template-columns: repeat(2, 1fr);
+.cols2 {
+	grid-template-columns: repeat(2, 1fr) !important;
 }
 
-.grid.cols3 {
-	grid-template-columns: repeat(3, 1fr);
+.cols3 {
+	grid-template-columns: repeat(3, 1fr) !important;
 }
 
 @media (max-width: 640px) {
 	.grid,
-	.grid.cols2,
-	.grid.cols3 {
-		grid-template-columns: 1fr;
+	.cols2,
+	.cols3 {
+		grid-template-columns: 1fr !important;
 	}
 }
 
@@ -41,16 +42,61 @@
 	line-height: 1;
 }
 
+.iconBox {
+	width: 28px;
+	height: 28px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	background: transparent;
+	border: none;
+	color: #ff2244;
+	padding: 0;
+}
+
+.iconBox svg {
+	width: 100%;
+	height: 100%;
+}
+
+.cardContent {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
 .cardTitle {
 	font-size: 15px;
 	font-weight: 600;
-	color: var(--color-text-primary);
+	color: var(--text-primary);
 	margin: 0;
 }
 
 .cardDescription {
 	font-size: 13px;
-	color: var(--color-text-secondary);
+	color: var(--text-primary-soft);
 	line-height: 1.6;
 	margin: 0;
+}
+
+/* Danger variant */
+.card.danger {
+	flex-direction: row;
+	align-items: center;
+	gap: 12px;
+	padding: 10px 10px;
+	border-color: rgba(224, 42, 60, 0.18);
+}
+
+.card.danger:hover {
+	border-color: rgba(224, 42, 60, 0.45);
+	box-shadow: 0 0 18px rgba(224, 42, 60, 0.1);
+}
+
+.card.danger .cardTitle {
+	font-size: 13.5px;
+	line-height: 1.45;
 }

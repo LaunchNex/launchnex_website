@@ -1,0 +1,94 @@
+.emailSignup {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.emailIcon {
+	display: flex;
+	color: var(--color-highlight);
+	line-height: 1;
+}
+
+.emailTitle {
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--text-primary);
+	line-height: 1.35;
+}
+
+.emailSub {
+	font-size: 13px;
+	color: var(--text-subtle);
+	line-height: 1.55;
+}
+
+.emailForm {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin-top: 4px;
+}
+
+.emailInput {
+	width: 100%;
+	padding: 9px 12px;
+	background: var(--color-bg-3);
+	border: 1px solid var(--color-border);
+	border-radius: 8px;
+	font-size: 13px;
+	color: var(--text-primary);
+	outline: none;
+	transition: border-color 0.15s;
+}
+
+.emailInput::placeholder {
+	color: var(--text-tertiary);
+}
+
+.emailInput:focus {
+	border-color: var(--color-border-strong);
+}
+
+.inputError {
+	border-color: #ff4d4f;
+}
+
+.inputError:focus {
+	border-color: #ff4d4f;
+}
+
+.emailBtn {
+	width: 100%;
+	padding: 9px 12px;
+	background: var(--color-accent-strong);
+	color: #0a0f0a;
+	font-size: 13px;
+	font-weight: 600;
+	border-radius: 8px;
+	border: none;
+	cursor: pointer;
+	transition: background 0.15s;
+}
+
+.emailBtn:hover:not(:disabled) {
+	background: var(--color-highlight);
+}
+
+.emailBtn:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.successMsg {
+	font-size: 13px;
+	color: var(--color-highlight);
+	margin: 8px 0 0;
+	line-height: 1.5;
+}
+
+.errorMsg {
+	font-size: 12px;
+	color: #ff4d4f;
+	margin: 2px 0 0;
+}

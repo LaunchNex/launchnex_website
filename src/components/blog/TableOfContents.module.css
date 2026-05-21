@@ -1,0 +1,58 @@
+.toc {
+	padding: 0;
+}
+
+.tocLabel {
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--text-subtle);
+	margin-bottom: 12px;
+}
+
+.tocList {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.tocItem,
+.tocSubItem {
+	line-height: 1.4;
+}
+
+.tocSubItem {
+	padding-left: 12px;
+}
+
+.tocLink {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 14px;
+	color: var(--text-primary-soft);
+	padding: 4px 0;
+	transition: color 0.15s;
+	text-decoration: none;
+	line-height: 1.45;
+}
+
+.tocLink:hover {
+	color: var(--text-primary);
+}
+
+.tocLink.active {
+	color: var(--color-highlight);
+}
+
+.subDot {
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background: currentColor;
+	flex-shrink: 0;
+}
