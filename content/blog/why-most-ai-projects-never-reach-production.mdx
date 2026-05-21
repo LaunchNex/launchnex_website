@@ -16,17 +16,6 @@ The problem is rarely that AI "doesn't work." The problem is that production AI 
 
 <Callout type="info">A flashy demo can prove possibility. A production system must prove reliability, scalability, trust, and business impact — continuously.</Callout>
 
-## The Numbers Behind the Failure
-
-| Metric | Stat | Source |
-|--------|------|--------|
-| AI projects failing to reach meaningful production | 80%+ | RAND Corp, 2024 |
-| Companies abandoning most AI initiatives (2025) | 42% | S&P Global, 2025 |
-| Avg. POCs scrapped before production | 46% | S&P Global, 2025 |
-| GenAI orgs with zero measurable financial return | 95% | MIT NANDA, 2025 |
-| AI failures that are leadership-driven, not technical | 84% | RAND Corp, 2024 |
-| Average ROI from successful AI deployments | 383% | Forrester, 2024 |
-
 ## The Prototype Trap
 
 Most AI projects follow the same tragic arc:
@@ -39,7 +28,7 @@ The demo works. Leadership gets excited. Budgets get approved.
 
 Then reality hits.
 
-<CardGrid cols={3}>
+<CardGrid cols="3">
   <Card iconName="pipeline" variant="danger" title="The data pipeline breaks" />
   <Card iconName="latency" variant="danger" title="Model latency spikes under real traffic" />
   <Card iconName="users" variant="danger" title="Users don't trust the outputs" />
@@ -140,7 +129,7 @@ Deploying a model is not the finish line. It's the beginning of the operational 
 
 Looking at the 30% that make it, some consistent patterns emerge. The good news: Forrester found that organizations successfully deploying AI achieve an average 383% ROI. The outliers aren't doing magic — they're doing discipline.
 
-<CardGrid cols={2}>
+<CardGrid cols="2">
   <Card icon="🎯" title="Start with constraints, not ambitions" description="Successful projects define what AI won't do before defining what it will. They have clear fallbacks when the model is uncertain and production requirements defined before the first sprint." />
   <Card icon="📊" title="Measure the right things" description="Business KPIs — not just model accuracy. Reduced support tickets, faster triage time, higher conversion rates. Engineering metrics serve business metrics, not the other way around." />
   <Card icon="🏗️" title="Treat data as infrastructure" description="Data quality, lineage, and governance are first-class engineering concerns from day one. Reliable AI requires governance, monitoring, consistency, documentation, and clear ownership." />

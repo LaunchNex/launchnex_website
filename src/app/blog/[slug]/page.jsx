@@ -129,17 +129,18 @@ export default async function BlogPostPage({ params }) {
 							</div>
 						</div>
 					)}
-					{post.ogImage && (
-						<div className={styles.heroImageWrap}>
-							<img
-								src={post.ogImage}
-								alt={post.title}
-								className={styles.heroImage}
-							/>
-						</div>
-					)}
 				</div>
 			</header>
+
+			{post.ogImage && (
+				<div className={styles.heroImageWrap}>
+					<img
+						src={post.ogImage}
+						alt={post.title}
+						className={styles.heroImage}
+					/>
+				</div>
+			)}
 
 			<div className={styles.body}>
 				<article className={styles.article}>

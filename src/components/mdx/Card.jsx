@@ -18,11 +18,8 @@ const ICONS = {
 };
 
 export function CardGrid({ cols, children }) {
-	const gridStyle = cols
-		? { gridTemplateColumns: `repeat(${cols}, 1fr)` }
-		: {};
 	return (
-		<div className={styles.grid} style={gridStyle}>
+		<div className={styles.grid} style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}>
 			{children}
 		</div>
 	);
